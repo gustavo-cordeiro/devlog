@@ -188,21 +188,24 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		}
 
 		&::after {
-			filter: url('#effect-1');		
+			/* filter: url('#effect-1'); */
+			backdrop-filter: url('#effect-1');
 			transform: translate(2%, 0);		
 			animation: glitch-animation 3s ease-in-out infinite both;
 			/* animation-play-state: paused; */
 		}
 
 		&::before {
-			filter: url('#effect-2');
+			/* filter: url('#effect-2'); */
+			backdrop-filter: url('#effect-2');
 			transform: translate(0, -2%);
 			animation: glitch-animation2 3s ease-in-out infinite both;
 			/* animation-play-state: paused; */
 		}
 
 		& > picture::before {
-			filter: url('#effect-3');
+			/* filter: url('#effect-3'); */
+			backdrop-filter: url('#effect-3');
 			transform: translate(0, 2%);
 			animation: glitch-animation3 3s ease-in-out infinite both;
 			/* animation-play-state: paused; */

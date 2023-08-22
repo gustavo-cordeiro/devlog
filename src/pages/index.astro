@@ -1,7 +1,5 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
@@ -10,41 +8,352 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body>
-		<Header title={SITE_TITLE} />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/pages/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
+	<body class="bg-[#262729] text-[#E6E7EC]">
+		<div class="container p-8 mx-auto">
+			<div class="flex relative flex-wrap items-center content-center glitch-cotainer mb-8">
+				<div class="w-full aspect-square sm:w-1/4 flex-grow h-full glitch-filter">
+					<picture>
+						<img src="/images/gustavo-cordeiro-profile-picture.png" alt="The Gustavo Cordeiro Profile Picture" class="w-auto h-full"/>
+					</picture>
+				</div>
+				<div class="w-full text-center sm:text-left -mt-[45%] pb-3 sm:mt-0 z-10  bg-gradient-to-t from-[#262729] sm:bg-transparent sm:w-3/4 flex-grow 2xl:pl-20 sm:pl-10">
+					<h1 class="text-[12vw] sm:text-[8vw] 2xl:text-[8em] text-shadow leading-tight">Gustavo<br/>Cordeiro</h1>
+					<h2 class="text-[4vw] sm:text-[2vw] 2xl:text-[2em] text-[#90A4B1]">Front-end facilitator</h2>
+				</div>
+
+				<nav class="w-full mt-4 -mx-8 sm:mt-0 sm:w-auto flex-grow-[3] sm:absolute sm:right-0 sm:top-0">
+					<ul class="flex flex-nowrap whitespace-nowrap overflow-x-scroll pb-2 sm:flex-col text-xs leading-[2.8!important]">
+						<li class="font-cameo first-of-type:ml-8 sm:first-of-type:ml-0 px-3 sm:px-0 border-[#E6E7EC] border-solid border-[1px] sm:border-none mr-5">
+							<a href="#" class="">All posts</a>
+						</li>
+						<li class="first-of-type:ml-8 px-3 sm:px-0 border-[#E6E7EC] border-solid border-[1px] sm:border-none mr-5">
+							<a href="#" class="">Architecture</a>
+						</li>
+						<li class="first-of-type:ml-8 px-3 sm:px-0 border-[#E6E7EC] border-solid border-[1px] sm:border-none mr-5">
+							<a href="#" class="">The Nature of Code</a>
+						</li>
+						<li class="first-of-type:ml-8 px-3 sm:px-0 border-[#E6E7EC] border-solid border-[1px] sm:border-none mr-5">
+							<a href="#" class="">About me</a>
+						</li>
+						<li class="first-of-type:ml-8 px-3 sm:px-0 border-[#E6E7EC] border-solid border-[1px] sm:border-none mr-5">
+							<a href="#" class="">Search</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+
+			<ol class="flex flex-wrap">
+				<li class="aspect-square p-4 border-[#E6E7EC] border-solid border-[1px] w-1/2 sm:w-1/4 m-[-1px_0_0_-1px]" >
+					<a href="#" class="block">
+						<article class="aspect-square relative">
+							<div class="absolute">
+								<div class="text-[#DC6439] text-xs">About me</div>
+								<div class="text-[#90A4B1] text-xs">January, 11</div>
+							</div>
+							
+							<h1 class="flex items-center justify-center h-full">Article 1</h1>
+						</article>
+					</a>
+				</li>
+				<li class="aspect-square p-4 border-[#E6E7EC] border-solid border-[1px] w-1/2 sm:w-1/4 m-[-1px_0_0_-1px]" >
+					<a href="#" class="block">
+						<article class="aspect-square relative">
+							<div class="absolute">
+								<div class="text-[#DC6439] text-xs">About me</div>
+								<div class="text-[#90A4B1] text-xs">January, 11</div>
+							</div>
+							
+							<h1 class="flex items-center justify-center h-full">Article 1</h1>
+						</article>
+					</a>
+					<li class="aspect-square p-4 border-[#E6E7EC] border-solid border-[1px] w-1/2 sm:w-1/4 m-[-1px_0_0_-1px]" >
+						<a href="#" class="block">
+							<article class="aspect-square relative">
+								<div class="absolute">
+									<div class="text-[#DC6439] text-xs">About me</div>
+									<div class="text-[#90A4B1] text-xs">January, 11</div>
+								</div>
+								
+								<h1 class="flex items-center justify-center h-full">Article 1</h1>
+							</article>
+						</a>
+					</li>
+					<li class="aspect-square p-4 border-[#E6E7EC] border-solid border-[1px] w-1/2 sm:w-1/4 m-[-1px_0_0_-1px]" >
+						<a href="#" class="block">
+							<article class="aspect-square relative">
+								<div class="absolute">
+									<div class="text-[#DC6439] text-xs">About me</div>
+									<div class="text-[#90A4B1] text-xs">January, 11</div>
+								</div>
+								
+								<h1 class="flex items-center justify-center h-full">Article 1</h1>
+							</article>
+						</a>
+					</li>
+					<li class="aspect-square p-4 border-[#E6E7EC] border-solid border-[1px] w-1/2 sm:w-1/4 m-[-1px_0_0_-1px]" >
+						<a href="#" class="block">
+							<article class="aspect-square relative">
+								<div class="absolute">
+									<div class="text-[#DC6439] text-xs">About me</div>
+									<div class="text-[#90A4B1] text-xs">January, 11</div>
+								</div>
+								
+								<h1 class="flex items-center justify-center h-full">Article 1</h1>
+							</article>
+						</a>
+					</li>
+					<li class="aspect-square p-4 border-[#E6E7EC] border-solid border-[1px] w-1/2 sm:w-1/4 m-[-1px_0_0_-1px]" >
+						<a href="#" class="block">
+							<article class="aspect-square relative">
+								<div class="absolute">
+									<div class="text-[#DC6439] text-xs">About me</div>
+									<div class="text-[#90A4B1] text-xs">January, 11</div>
+								</div>
+								
+								<h1 class="flex items-center justify-center h-full">Article 1</h1>
+							</article>
+						</a>
+					</li>
+				</li>
+			</ol>
+		</div>
+
+			
+		<svg id="svgfilters" aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			<defs>
+				<filter id="effect-1" x="-10%" y="-10%" width="120%" height="120%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+					<feColorMatrix type="matrix" values="1 0 0 0 0
+				1 0 0 0 0
+				1 0 0 0 0
+				0 0 0 1 0" in="SourceGraphic" result="colormatrix"/>
+					<feComponentTransfer in="colormatrix" result="componentTransfer">
+								<feFuncR type="table" tableValues="0.89"/>
+						<feFuncG type="table" tableValues="0.43"/>
+						<feFuncB type="table" tableValues="0.24"/>
+						<feFuncA type="table" tableValues="0 1"/>
+						</feComponentTransfer>
+					<feBlend mode="multiply" in="componentTransfer" in2="SourceGraphic" result="blend"/>
+				</filter>
+				<filter id="effect-2" x="-10%" y="-10%" width="120%" height="120%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+					<feColorMatrix type="matrix" values="1 0 0 0 0
+				1 0 0 0 0
+				1 0 0 0 0
+				0 0 0 1 0" in="SourceGraphic" result="colormatrix"/>
+					<feComponentTransfer in="colormatrix" result="componentTransfer">
+								<feFuncR type="table" tableValues="0.78"/>
+						<feFuncG type="table" tableValues="0.68"/>
+						<feFuncB type="table" tableValues="0.29"/>
+						<feFuncA type="table" tableValues="0 1"/>
+						</feComponentTransfer>
+					<feBlend mode="multiply" in="componentTransfer" in2="SourceGraphic" result="blend"/>
+				</filter>
+				<filter id="effect-3" x="-10%" y="-10%" width="120%" height="120%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+					<feColorMatrix type="matrix" values="1 0 0 0 0
+				1 0 0 0 0
+				1 0 0 0 0
+				0 0 0 1 0" in="SourceGraphic" result="colormatrix"/>
+					<feComponentTransfer in="colormatrix" result="componentTransfer">
+							<feFuncR type="table" tableValues="0.33"/>
+							<feFuncG type="table" tableValues="0.6"/>
+							<feFuncB type="table" tableValues="0.84"/>
+							<feFuncA type="table" tableValues="0 1"/>
+						</feComponentTransfer>
+					<feBlend mode="multiply" in="componentTransfer" in2="SourceGraphic" result="blend"/>
+				</filter>
+			</defs>
+		</svg>
 	</body>
 </html>
+
+<style>
+
+	.glitch-filter {
+		position: relative;
+
+		&::before, &::after, & > picture::before {
+				content: '';
+				background: url('/images/gustavo-cordeiro-profile-picture.png');
+				position:absolute;
+				top:0px;
+				left:0px;
+				z-index: 2;
+				width: 100%;
+				height: 100%;
+				transform: translate(0, 0);
+				background-size: cover;
+				mix-blend-mode: lighten;
+				will-change: opacity;
+				/* opacity: 0;
+				transition: opacity .3s ease-in-out; */
+		}
+
+		&::after {
+			filter: url('#effect-1');		
+			transform: translate(2%, 0);		
+			animation: glitch-animation 3s ease-in-out infinite both;
+			/* animation-play-state: paused; */
+		}
+
+		&::before {
+			filter: url('#effect-2');
+			transform: translate(0, -2%);
+			animation: glitch-animation2 3s ease-in-out infinite both;
+			/* animation-play-state: paused; */
+		}
+
+		& > picture::before {
+			filter: url('#effect-3');
+			transform: translate(0, 2%);
+			animation: glitch-animation3 3s ease-in-out infinite both;
+			/* animation-play-state: paused; */
+		}
+
+		&:hover {
+			/* &::before, &::after, & > picture::before {
+				opacity: 1;
+			} */
+
+			/* &::before {
+				filter: url('#effect-3');
+			} */
+			
+			/* &::after {
+				transform: translate(-2%, -2%);
+				/* animation: glitch-animation 3s ease-in-out infinite both reverse; */
+			/* } 
+
+			&::before {
+				transform: translate(2%,2%);
+				/* animation: glitch-animation 3s ease-in-out infinite both; */
+			/* } */
+		}
+	}
+
+	.text-shadow {
+		text-shadow: .03em 0px 0 #C8AD49, 0px -.03em 0 #E26D3C, 0px .03em 0 #5499D7;		
+		animation: text-shadow-glitch 3s ease-in-out infinite both;
+		/* animation-play-state: paused; */
+		/* text-shadow: -.03em -.03em 0 #C8AD49, -.03em -.03em 0 #E26D3C, .03em .03em 0 #5499D7; */
+	}
+
+	.glitch-cotainer {
+		&:hover {
+			& .text-shadow {
+				/* animation: text-shadow-glitch 3s ease-in-out infinite forwards; */
+				animation-play-state: running;
+			}
+			& .glitch-filter {
+				&::after {
+					/* animation: glitch-animation 3s ease-in-out infinite forwards; */
+					animation-play-state: running;
+				}
+
+				&::before {
+					/* animation: glitch-animation2 3s ease-in-out infinite forwards; */
+					animation-play-state: running;
+				}
+
+				& > picture::before {
+					/* animation: glitch-animation3 3s ease-in-out infinite forwards; */
+					animation-play-state: running;
+				}
+			}
+		}
+	}
+	
+	@keyframes text-shadow-glitch {
+		0% {
+			text-shadow: .03em 0px 0 #C8AD49, 0px -.03em 0 #E26D3C, 0px .03em 0 #5499D7;
+			
+		}
+		
+		/* 65% {
+			text-shadow: 0px -.03em 0 #5499D7, 0px .03em 0 #E26D3C, -.03em 0px 0 #C8AD49;
+		} */
+
+		65% {
+			text-shadow: 0px .03em 0 #C8AD49, 0px -.03em 0 #E26D3C, .03em 0px 0  #5499D7;
+			/* text-shadow: .05em 0px 0 #C8AD49, 0px -.05em 0 #E26D3C, 0px .05em 0 #5499D7; */
+		}
+		
+
+		/* 40% {
+			text-shadow: 0px -.01em 0 #C8AD49, 0px .03em 0 #E26D3C, -.03em 0px 0 #5499D7;
+		}
+
+		60% {
+			text-shadow: 0px -.02em 0 #C8AD49, 0px -.03em 0 #E26D3C, 0px .03em 0 #5499D7;
+		}
+
+		80% {
+			text-shadow: 0px -.03em 0 #C8AD49, 0px .03em 0 #E26D3C, -.03em 0px 0 #5499D7;
+		}
+		*/
+
+		100% {
+			text-shadow: .03em 0px 0 #C8AD49, 0px -.03em 0 #E26D3C, 0px .03em 0 #5499D7;
+		} 
+
+		/* 0% {
+			text-shadow: -.03em -.03em 0 #C8AD49, -.03em -.03em 0 #E26D3C, .03em .03em 0 #5499D7;
+		}
+		20% {
+			text-shadow: .03em -.03em 0 #C8AD49, -.03em .03em 0 #E26D3C, -.03em .03em 0 #5499D7;
+		}
+		40% {
+			text-shadow: .03em .03em 0 #C8AD49, .03em .03em 0 #E26D3C, -.03em -.03em #5499D7;
+		}
+		60% {
+			text-shadow: -.03em .03em 0 #C8AD49, .03em -.03em 0 #E26D3C, -.03em -.03em 0 #5499D7;
+		}
+		80% {
+			text-shadow: -.03em -.03em 0 #C8AD49, -.03em -.03em 0 #E26D3C, .03em -.03em 0 #5499D7;
+		}
+		100% {
+			transform: translate(0);
+		} */
+	}
+
+	@keyframes glitch-animation {
+		0% {
+			transform: translate(2%, 0);
+		}
+		
+		50% {
+			transform: translate( 0, -2%);
+		}
+		
+		100% {
+			transform: translate(2%, 0);
+		}
+	}
+
+	@keyframes glitch-animation2 {
+		0% {
+			transform: translate(0, -2%);
+		}
+		
+		50% {
+			transform: translate( 2%, 0);
+		}
+		
+		100% {
+			transform: translate(0, -2%);
+		}
+	}
+
+	@keyframes glitch-animation3 {
+		0% {
+			transform: translate(0, 2%);
+		}
+		
+		50% {
+			transform: translate( -2%, 0);
+		}
+		
+		100% {
+			transform: translate(0, 2%);
+		}
+	}
+	
+</style>

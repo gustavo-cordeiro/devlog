@@ -1,0 +1,19 @@
+.text-glitch-effect {
+  text-shadow: .03em 0px 0 #C8AD49, 0px -.03em 0 #E26D3C, 0px .03em 0 #5499D7;		
+  animation: text-glitch-animation 3s ease-in-out infinite both;
+}
+
+@keyframes text-glitch-animation {
+  0% {
+    text-shadow: .03em 0px 0 #C8AD49, 0px -.03em 0 #E26D3C, 0px .03em 0 #5499D7; 
+  }
+  
+  65% {
+    text-shadow: 0px .03em 0 #C8AD49, 0px -.03em 0 #E26D3C, .03em 0px 0  #5499D7;
+  }
+  
+
+  100% {
+    text-shadow: .03em 0px 0 #C8AD49, 0px -.03em 0 #E26D3C, 0px .03em 0 #5499D7;
+  }
+}

@@ -1,0 +1,193 @@
+// Here's the meat and potatoes.
+
+/* Our mixin positions a copy of our text
+directly on our existing text, while
+also setting content to the appropriate
+text set in the data-text attribute. */
+@mixin glitchShadow {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  mix-blend-mode: darken;
+  background-blend-mode: lighten;
+}
+
+@mixin glitch {
+  position: relative;
+  display: inline-block;
+  /* Animation provies a slight random skew. Check bottom of doc
+	for more information on how to random skew. */
+  animation: glitch-skew .3s infinite ease-in-out alternate-reverse;
+}
+
+
+@layer utilities {
+  .glitch-text {
+    @include glitch;
+
+    // Creates a copy before our text. 
+    &::before {
+      // Duplicates our text with the mixin.
+      @include glitchShadow;
+      // Scoots text slightly to the left for the color offset.
+      content: attr(data-text);
+      left: 2px;
+      // Creates the color 'shadow' that happens on the glitch.
+      text-shadow: -2px 0 #E26D3C;
+      /* Creates an initial clip for our glitch. This works in
+      a typical top,right,bottom,left fashion and creates a mask
+      to only show a certain part of the glitch at a time. */
+      clip-path: inset(44px 0 56px 450px);
+      /* Runs our glitch-anim-text defined below to run in a 5s loop, infinitely,
+      with an alternating animation to keep things fresh. */
+      animation: glitch-anim-text 5s infinite linear alternate-reverse;
+    }
+
+    // Creates a copy after our text. Note comments from ::before.
+    &::after {
+      @include glitchShadow;
+      content: attr(data-text);
+      left: -2px;
+      // text-shadow: -2px 0 #5499D7, 2px 2px #E26D3C;
+      text-shadow: 5px 0px 0 #C8AD49, 0px -3px 0 #E26D3C, 0px 3px 0 #5499D7;
+      animation: glitch-anim-text2 1s infinite linear alternate-reverse;
+    }
+  }
+
+  .glitch-picture {
+    @include glitch;
+    overflow: hidden;
+
+    &::before,
+    &::after,
+    &>picture::before,
+    &>picture::after {
+      @include glitchShadow;
+      content: '';
+    }
+
+    &::after {
+      background-image: linear-gradient(#C8AD49, #C8AD49), var(--glitch-filter-image-url);
+      top: 5px;
+      clip-path: inset(0 percentage(random() - 0.5) 0 percentage(random() - 0.5));
+      animation: glitch-anim-img 5s infinite linear alternate-reverse;
+    }
+
+    &::before {
+      background-image: linear-gradient(#E26D3C, #E26D3C), var(--glitch-filter-image-url);
+      left: -5px;
+      clip-path: inset(percentage(random() - 0.5) 0 percentage(random() - 0.5) 0);
+      animation: glitch-anim-img2 1s infinite linear alternate-reverse;
+    }
+
+    &>picture::after {
+      background-image: linear-gradient(#E26D3C, #E26D3C), var(--glitch-filter-image-url);
+      top: -5px;
+      clip-path: inset(0 percentage(random() - 0.5) 0 percentage(random() - 0.5));
+      animation: glitch-anim-img3 1s infinite linear alternate-reverse;
+    }
+
+    &>picture::before {
+      background-image: linear-gradient(#5499D7, #5499D7), var(--glitch-filter-image-url);
+      left: 5px;
+      clip-path: inset(percentage(random() - 0.5) 0 percentage(random() - 0.5) 0);
+      animation: glitch-anim-img4 1s infinite linear alternate-reverse;
+    }
+
+  }
+
+  /* Creates an animation with 20 steaps. For each step, it calculates 
+  a percentage for the specific step. It then generates a random clip
+  box to be used for the random glitch effect. Also adds a very subtle
+  skew to change the 'thickness' of the glitch.*/
+  @keyframes glitch-anim-text {
+    $steps: 20;
+
+    @for $i from 0 through $steps {
+      #{percentage(calc($i*(1/$steps)))} {
+        clip-path: inset(percentage(random()) percentage(random()) percentage(random()) percentage(random()));
+        clip-path: inset(random(100)+px, 0, random(100)+px, 9999px);
+        transform: skew(calc(random(100) / 100) + deg);
+      }
+    }
+  }
+
+  // Same deal, just duplicated for ultra randomness.
+  @keyframes glitch-anim-text2 {
+    $steps: 20;
+
+    @for $i from 0 through $steps {
+      #{percentage(calc($i*(1/$steps)))} {
+        clip-path: inset(percentage(random()) percentage(random()) percentage(random()) percentage(random()));
+        clip-path: inset(random(100)+px, 0, random(100)+px, 9999px);
+        transform: skew(calc(random() / 100) + deg);
+      }
+    }
+  }
+
+  @keyframes glitch-anim-img {
+    $steps: 20;
+
+    @for $i from 0 through $steps {
+      #{percentage(calc($i*(1/$steps)))} {
+        clip-path: inset(0 percentage(random()) 0 percentage(random()));
+        clip-path: inset(random(100)+px, 0, random(100)+px, 9999px);
+        transform: skew(calc(random(100) / 100) + deg);
+      }
+    }
+  }
+
+  // Same deal, just duplicated for ultra randomness.
+  @keyframes glitch-anim-img2 {
+    $steps: 20;
+
+    @for $i from 0 through $steps {
+      #{percentage(calc($i*(1/$steps)))} {
+        clip-path: inset(percentage(random()) 0 percentage(random()) 0);
+        // clip-path: inset(random(100)+px, 0, random(100)+px, 9999px);
+        transform: skew(calc(random() / 100) + deg);
+      }
+    }
+  }
+
+  // Same deal, just duplicated for ultra randomness.
+  @keyframes glitch-anim-img3 {
+    $steps: 20;
+
+    @for $i from 0 through $steps {
+      #{percentage(calc($i*(1/$steps)))} {
+        clip-path: inset(0 percentage(random()) 0 percentage(random()));
+        // clip-path: inset(random(100)+px, 0, random(100)+px, 9999px);
+        transform: skew(calc(random() / 100) + deg);
+      }
+    }
+  }
+
+  // Same deal, just duplicated for ultra randomness.
+  @keyframes glitch-anim-img4 {
+    $steps: 20;
+
+    @for $i from 0 through $steps {
+      #{percentage(calc($i*(1/$steps)))} {
+        clip-path: inset(percentage(random()) 0 percentage(random()) 0);
+        // clip-path: inset(random(100)+px, 0, random(100)+px, 9999px);
+        transform: skew(calc(random() / 100) + deg);
+      }
+    }
+  }
+
+  // Does the same deal as before, but now only skews. Used for main text.
+  @keyframes glitch-skew {
+    $steps: 10;
+
+    @for $i from 0 through $steps {
+      #{percentage(calc($i*(1/$steps)))} {
+        transform: skew((random() + 0.25) + deg);
+      }
+    }
+  }
+}

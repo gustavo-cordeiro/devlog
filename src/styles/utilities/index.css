@@ -1,2 +1,5 @@
-@import "./animista/index.css";
-@import "./text.css";
+/* @layer utilities { */
+  @import "./animista/index.css";
+  @import "./text.css";
+  @import "glitchEffect.scss";
+/* } */

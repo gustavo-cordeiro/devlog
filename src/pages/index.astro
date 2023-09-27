@@ -14,20 +14,19 @@ import PostList from '../components/PostList.vue';
 	</head>
 	<BaseLayout>
 		
-		<div class="flex relative flex-wrap items-center content-center my-4 sm:my-8">
+		<div class="flex relative flex-wrap items-center content-center my-4 sm:my-8 group">
 			<PictureGlitchEffect src="/images/gustavo-cordeiro-profile-picture.png" class="w-full aspect-square sm:w-1/4 flex-grow h-full">
 				<img src="/images/gustavo-cordeiro-profile-picture.png" alt="The Gustavo Cordeiro Profile Picture" class="w-full object-cover object-center" />
 			</PictureGlitchEffect>
-			<div class="absolute w-full sm:static bottom-0 text-center sm:text-left pb-3 sm:mt-0 z-10 bg-gradient-to-t from-[#262729] sm:bg-none sm:w-3/4 flex-grow 2xl:pl-20 sm:pl-10">
-				<h1 class="text-[12vw] sm:text-[8vw] lg:text-[8em] text-glitch-effect leading-tight">Gustavo<br/>Cordeiro</h1>
-				<h2 class="text-[4vw] sm:text-[2vw] lg:text-[2em] text-[#90A4B1]">Front-end facilitator</h2>
+			<div class="absolute w-full sm:static bottom-0 text-center sm:text-left max-sm:pb-3 sm:mt-0 z-10 bg-gradient-to-t from-[#262729] sm:bg-none sm:w-3/4 flex-grow sm:pl-4 md:pl-10  ">
+				<h1 class="max-sm:text-6xl text-[8vw] 2xl:text-[9rem] group-hover:glitch-text leading-tight" data-text="Gustavo Cordeiro">Gustavo Cordeiro</h1>
+				<h2 class="max-sm:text-2xl text-[3vw] 2xl:text-5xl text-[#90A4B1]">Front-end facilitator</h2>
 			</div>
 		</div>
 
 		<NavigationBar
-			currentLocation={Astro.url}
 			links={[
-				{text: 'All Posts', href:'/'},
+				{text: 'All Posts', href:'/', selected: true},
 				{text: 'Architecture', href:'/architecture'},
 				{text: 'The Nature of Code', href:'/the-nature-of-code'},
 				{text: 'About me', href:'/about-me',},

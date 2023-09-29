@@ -16,7 +16,7 @@ import type { AnchorHTMLAttributes } from 'vue';
         >
           <a 
             v-bind="link"
-            :class="[link.selected ? 'glitch-text font-cameo' : '', 'hover:glitch-text hover:font-cameo']"
+            :class="[link.selected ? 'glitch-text font-cameo' : '', 'hover:glitch-text hover:font-cameo :before:after:[animation-delay:10s]']"
             :data-text="link.text"
           >
             {{ link.text }}

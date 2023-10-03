@@ -103,7 +103,7 @@ $duration2: calc(map-get($glitch2, 'duration') + map-get($glitch2, 'wait'));
 
     @for $i from 0 through $steps {
       #{percentage(calc($i*(1/$steps)))} {
-        transform: skew((random()*1.5) + deg);
+        // transform: skew((random()*1.5) + deg);
       }
     }
   }
